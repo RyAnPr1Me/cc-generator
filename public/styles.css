@@ -1,0 +1,18 @@
+body {
+  background-color: #f0f2f5;
+  color: #212529;
+  font-family: 'Segoe UI', sans-serif;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+button {
+  background-color: #4361ee;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
