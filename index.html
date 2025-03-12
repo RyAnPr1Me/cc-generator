@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Credit Card Generator</title>
   <style>
     :root {
@@ -13,75 +13,71 @@
       --dark: #212529;
       --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
     }
-    
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    
     body {
       background-color: #f0f2f5;
       color: var(--dark);
       line-height: 1.6;
       padding: 20px;
     }
-    
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
     }
-    
     .header {
       text-align: center;
       margin-bottom: 30px;
     }
-    
     .header h1 {
       color: var(--primary);
       margin-bottom: 10px;
     }
-    
     .header p {
       color: #6c757d;
       font-size: 1.1rem;
     }
-    
     .main-content {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
     }
-    
-    .controls {
-      flex: 1;
-      min-width: 300px;
+    .controls,
+    .results {
       background: white;
       padding: 20px;
       border-radius: 10px;
       box-shadow: var(--card-shadow);
     }
-    
+    .controls {
+      flex: 1;
+      min-width: 300px;
+    }
+    .results {
+      flex: 2;
+      min-width: 300px;
+    }
     .form-group {
       margin-bottom: 15px;
     }
-    
     label {
       display: block;
       margin-bottom: 5px;
       font-weight: 500;
     }
-    
-    input, select {
+    input,
+    select {
       width: 100%;
       padding: 10px;
       border: 1px solid #ced4da;
       border-radius: 5px;
       font-size: 16px;
     }
-    
     button {
       background-color: var(--primary);
       color: white;
@@ -95,20 +91,9 @@
       transition: background-color 0.2s;
       width: 100%;
     }
-    
     button:hover {
       background-color: var(--secondary);
     }
-    
-    .results {
-      flex: 2;
-      min-width: 300px;
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: var(--card-shadow);
-    }
-    
     .credit-card {
       background: linear-gradient(135deg, #4361ee, #3a0ca3);
       color: white;
@@ -119,7 +104,6 @@
       position: relative;
       overflow: hidden;
     }
-    
     .credit-card::before {
       content: "";
       position: absolute;
@@ -130,7 +114,6 @@
       width: 250px;
       border-radius: 50%;
     }
-    
     .credit-card::after {
       content: "";
       position: absolute;
@@ -141,41 +124,34 @@
       width: 300px;
       border-radius: 50%;
     }
-    
     .card-number {
       font-size: 1.5rem;
       letter-spacing: 2px;
       margin: 10px 0;
-      z-index: 1;
       position: relative;
+      z-index: 1;
     }
-    
     .card-details {
       display: flex;
       justify-content: space-between;
-      z-index: 1;
       position: relative;
+      z-index: 1;
     }
-    
     .card-details div {
       margin-right: 15px;
     }
-    
     .card-details span {
       display: block;
     }
-    
     .card-details .label {
       font-size: 0.7rem;
       text-transform: uppercase;
       opacity: 0.7;
       margin-bottom: 5px;
     }
-    
     .card-details .value {
       font-weight: 500;
     }
-    
     .card-brand {
       position: absolute;
       top: 20px;
@@ -184,31 +160,26 @@
       font-weight: bold;
       z-index: 1;
     }
-    
     .history {
       margin-top: 20px;
     }
-    
     table {
       width: 100%;
       border-collapse: collapse;
       text-align: left;
     }
-    
-    th, td {
+    th,
+    td {
       padding: 10px;
       border-bottom: 1px solid #e9ecef;
     }
-    
     th {
       background-color: #f8f9fa;
       font-weight: 500;
     }
-    
     tr:hover {
       background-color: #f8f9fa;
     }
-    
     .copy-btn {
       background-color: var(--success);
       color: white;
@@ -219,7 +190,6 @@
       font-size: 14px;
       margin-left: 10px;
     }
-    
     .saved-address {
       margin-top: 10px;
       padding: 15px;
@@ -227,11 +197,9 @@
       border-radius: 5px;
       border-left: 4px solid var(--primary);
     }
-    
     .address-line {
       margin-bottom: 5px;
     }
-    
     @media (max-width: 768px) {
       .main-content {
         flex-direction: column;
@@ -245,7 +213,6 @@
       <h1>Credit Card Generator</h1>
       <p>Generate valid credit card numbers for testing purposes</p>
     </div>
-    
     <div class="main-content">
       <div class="controls">
         <div class="form-group">
@@ -257,14 +224,11 @@
             <option value="DISCOVER">Discover</option>
           </select>
         </div>
-        
         <div class="form-group">
           <label for="cardCount">Number of Cards</label>
-          <input type="number" id="cardCount" min="1" max="10" value="1">
+          <input type="number" id="cardCount" min="1" max="10" value="1" />
         </div>
-        
         <h3 style="margin-top: 20px; margin-bottom: 10px;">Cardholder Details</h3>
-        
         <div class="form-group">
           <label for="nameType">Name Generation</label>
           <select id="nameType">
@@ -272,7 +236,6 @@
             <option value="random">Random Names</option>
           </select>
         </div>
-        
         <div class="form-group">
           <label for="country">Country</label>
           <select id="country">
@@ -284,7 +247,6 @@
             <option value="FR">France</option>
           </select>
         </div>
-        
         <div class="form-group">
           <label for="includeAddress">Include Billing Address</label>
           <select id="includeAddress">
@@ -292,10 +254,8 @@
             <option value="no">No</option>
           </select>
         </div>
-        
         <button id="generateBtn">Generate Cards</button>
       </div>
-      
       <div class="results">
         <div id="previewCard" class="credit-card">
           <div class="card-brand">VISA</div>
@@ -315,15 +275,17 @@
             </div>
           </div>
         </div>
-        
         <div id="addressSection" class="saved-address">
           <h3>Billing Address</h3>
           <p class="address-line" id="addressLine1">123 Main Street</p>
           <p class="address-line" id="addressLine2">Apt 4B</p>
-          <p class="address-line"><span id="addressCity">New York</span>, <span id="addressState">NY</span> <span id="addressZip">10001</span></p>
+          <p class="address-line">
+            <span id="addressCity">New York</span>, 
+            <span id="addressState">NY</span> 
+            <span id="addressZip">10001</span>
+          </p>
           <p class="address-line" id="addressCountry">United States</p>
         </div>
-        
         <div class="history">
           <h3>Generated Cards</h3>
           <table id="historyTable">
@@ -338,48 +300,29 @@
               </tr>
             </thead>
             <tbody id="historyTableBody">
-              <!-- History items will be added here -->
+              <!-- Generated entries will appear here -->
             </tbody>
           </table>
         </div>
       </div>
     </div>
   </div>
-  
   <script>
-    // Card prefixes for different card types
+    // Card configuration
     const CARD_TYPES = {
       VISA: ['4'],
       MASTERCARD: ['51', '52', '53', '54', '55'],
       AMEX: ['34', '37'],
       DISCOVER: ['6011', '644', '645', '646', '647', '648', '649', '65']
     };
-    
-    // Default card lengths
-    const CARD_LENGTHS = {
-      VISA: 16,
-      MASTERCARD: 16,
-      AMEX: 15,
-      DISCOVER: 16
-    };
-    
-    // CVV lengths
-    const CVV_LENGTHS = {
-      VISA: 3,
-      MASTERCARD: 3,
-      AMEX: 4,
-      DISCOVER: 3
-    };
-    
-    // Font colors for card types
+    const CARD_LENGTHS = { VISA: 16, MASTERCARD: 16, AMEX: 15, DISCOVER: 16 };
+    const CVV_LENGTHS = { VISA: 3, MASTERCARD: 3, AMEX: 4, DISCOVER: 3 };
     const CARD_COLORS = {
       VISA: 'linear-gradient(135deg, #4361ee, #3a0ca3)',
       MASTERCARD: 'linear-gradient(135deg, #f72585, #7209b7)',
       AMEX: 'linear-gradient(135deg, #3a86ff, #4cc9f0)',
       DISCOVER: 'linear-gradient(135deg, #ff9e00, #ff4d00)'
     };
-    
-    // First names by region
     const FIRST_NAMES = {
       US: ['James', 'John', 'Robert', 'Michael', 'William', 'David', 'Mary', 'Patricia', 'Jennifer', 'Linda', 'Elizabeth', 'Susan'],
       CA: ['Noah', 'Liam', 'William', 'Logan', 'Olivia', 'Emma', 'Charlotte', 'Sophia'],
@@ -388,8 +331,6 @@
       DE: ['Ben', 'Paul', 'Leon', 'Finn', 'Emma', 'Hanna', 'Mia', 'Sophia'],
       FR: ['Gabriel', 'Louis', 'Raphaël', 'Jules', 'Emma', 'Jade', 'Louise', 'Alice']
     };
-    
-    // Last names by region
     const LAST_NAMES = {
       US: ['Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Miller', 'Davis', 'Garcia', 'Rodriguez', 'Wilson'],
       CA: ['Smith', 'Brown', 'Tremblay', 'Martin', 'Roy', 'Gagnon', 'Lee', 'Wilson'],
@@ -398,8 +339,6 @@
       DE: ['Müller', 'Schmidt', 'Schneider', 'Fischer', 'Weber', 'Meyer', 'Wagner', 'Becker'],
       FR: ['Martin', 'Bernard', 'Dubois', 'Thomas', 'Robert', 'Richard', 'Petit', 'Durand']
     };
-    
-    // Cities by country
     const CITIES = {
       US: ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix', 'Philadelphia', 'San Antonio', 'San Diego', 'Dallas', 'San Jose'],
       CA: ['Toronto', 'Montreal', 'Vancouver', 'Calgary', 'Edmonton', 'Ottawa', 'Winnipeg', 'Quebec City'],
@@ -408,8 +347,6 @@
       DE: ['Berlin', 'Hamburg', 'Munich', 'Cologne', 'Frankfurt', 'Stuttgart', 'Düsseldorf', 'Leipzig'],
       FR: ['Paris', 'Marseille', 'Lyon', 'Toulouse', 'Nice', 'Nantes', 'Strasbourg', 'Montpellier']
     };
-    
-    // States/provinces by country
     const STATES = {
       US: ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'],
       CA: ['AB', 'BC', 'MB', 'NB', 'NL', 'NS', 'ON', 'PE', 'QC', 'SK'],
@@ -418,8 +355,6 @@
       DE: ['BW', 'BY', 'BE', 'BB', 'HB', 'HH', 'HE', 'MV', 'NI', 'NW', 'RP', 'SL', 'SN', 'ST', 'SH', 'TH'],
       FR: ['IDF', 'ARA', 'BFC', 'BRE', 'CVL', 'COR', 'GES', 'HDF', 'NOR', 'NAQ', 'OCC', 'PDL', 'PAC']
     };
-    
-    // Full country names
     const COUNTRY_NAMES = {
       US: 'United States',
       CA: 'Canada',
@@ -428,11 +363,10 @@
       DE: 'Germany',
       FR: 'France'
     };
-    
-    // Zip/postal code formats by country
     const ZIP_FORMATS = {
       US: () => Math.floor(10000 + Math.random() * 90000),
-      CA: () => `${randomLetter()}${Math.floor(1 + Math.random() * 9)}${randomLetter()} ${Math.floor(1 + Math.random() * 9)}${randomLetter()}${Math.floor(1 + Math.random() * 9)}`,
+      CA: () =>
+        `${randomLetter()}${Math.floor(1 + Math.random() * 9)}${randomLetter()} ${Math.floor(1 + Math.random() * 9)}${randomLetter()}${Math.floor(1 + Math.random() * 9)}`,
       UK: () => `${randomLetters(2)}${Math.floor(1 + Math.random() * 99)} ${Math.floor(1 + Math.random() * 9)}${randomLetters(2)}`,
       AU: () => Math.floor(1000 + Math.random() * 9000),
       DE: () => Math.floor(10000 + Math.random() * 90000),
@@ -440,84 +374,53 @@
     };
     
     // Utility Functions
-    
-    // Performs Luhn algorithm check to validate a credit card number
     function isValidLuhn(cardNumber) {
       const digits = cardNumber.split('').map(Number);
       let sum = 0;
       let alternate = false;
-      
-      // Process from right to left
       for (let i = digits.length - 1; i >= 0; i--) {
         let digit = digits[i];
-        
-        // Double every second digit
         if (alternate) {
           digit *= 2;
-          if (digit > 9) {
-            digit -= 9;
-          }
+          if (digit > 9) digit -= 9;
         }
-        
         sum += digit;
         alternate = !alternate;
       }
-      
-      // Valid if sum is divisible by 10
       return sum % 10 === 0;
     }
     
-    // Generates check digit for partial card number based on Luhn algorithm
     function generateCheckDigit(partialNumber) {
-      // Append a 0 as placeholder for check digit
-      const withZero = partialNumber + "0";
-      
-      // If valid with 0, return 0, otherwise calculate proper check digit
-      if (isValidLuhn(withZero)) {
-        return 0;
-      } else {
-        const sum = withZero.split('').map(Number).reduce((acc, digit, index) => {
-          if ((withZero.length - index) % 2 === 0) {
-            digit *= 2;
-            if (digit > 9) {
-              digit -= 9;
-            }
-          }
-          return acc + digit;
-        }, 0);
-        
-        return (10 - (sum % 10)) % 10;
+      let sum = 0;
+      let shouldDouble = (partialNumber.length % 2 === 0);
+      for (let i = 0; i < partialNumber.length; i++) {
+        let digit = parseInt(partialNumber[i], 10);
+        if (shouldDouble) {
+          digit *= 2;
+          if (digit > 9) digit -= 9;
+        }
+        sum += digit;
+        shouldDouble = !shouldDouble;
       }
+      return (10 - (sum % 10)) % 10;
     }
     
-    // Generates a random credit card number
     function generateCreditCardNumber(cardType = 'VISA') {
       const prefixes = CARD_TYPES[cardType] || CARD_TYPES.VISA;
       const prefix = prefixes[Math.floor(Math.random() * prefixes.length)];
-      
-      // Use default length for card type
       const length = CARD_LENGTHS[cardType] || 16;
-      
       if (prefix.length >= length) {
         throw new Error('Prefix length exceeds requested card number length');
       }
-      
-      // Generate random digits for the rest of the card (minus check digit)
       let cardNumber = prefix;
-      const remainingLength = length - prefix.length - 1; // -1 for check digit
-      
+      const remainingLength = length - prefix.length - 1;
       for (let i = 0; i < remainingLength; i++) {
         cardNumber += Math.floor(Math.random() * 10);
       }
-      
-      // Add Luhn check digit
       const checkDigit = generateCheckDigit(cardNumber);
-      cardNumber += checkDigit;
-      
-      return cardNumber;
+      return cardNumber + checkDigit;
     }
     
-    // Format credit card number with spaces
     function formatCardNumber(cardNumber, cardType) {
       if (cardType === 'AMEX') {
         return cardNumber.substring(0, 4) + ' ' + 
@@ -531,15 +434,13 @@
       }
     }
     
-    // Generate random expiry date (between now and 5 years in the future)
     function generateExpiryDate() {
       const now = new Date();
       const month = Math.floor(1 + Math.random() * 12);
       const year = now.getFullYear() + Math.floor(Math.random() * 5) + 1;
-      return `${month.toString().padStart(2, '0')}/${year.toString().substring(2)}`;
+      return `${month.toString().padStart(2, '0')}/${year.toString().slice(-2)}`;
     }
     
-    // Generate random CVV
     function generateCVV(cardType) {
       const length = CVV_LENGTHS[cardType] || 3;
       let cvv = '';
@@ -549,39 +450,30 @@
       return cvv;
     }
     
-    // Generate a random name
     function generateName(country, nameType) {
       const firstNames = FIRST_NAMES[country] || FIRST_NAMES.US;
       const lastNames = LAST_NAMES[country] || LAST_NAMES.US;
-      
       if (nameType === 'random') {
-        // For random names, generate a mix of consonants and vowels
         return getRandomWord(5, 10).toUpperCase() + ' ' + getRandomWord(5, 12).toUpperCase();
       } else {
-        // For realistic names
         const firstName = firstNames[Math.floor(Math.random() * firstNames.length)];
         const lastName = lastNames[Math.floor(Math.random() * lastNames.length)];
         return `${firstName} ${lastName}`.toUpperCase();
       }
     }
     
-    // Generate random address
     function generateAddress(country) {
       const streetNumber = Math.floor(1 + Math.random() * 9999);
       const streetNames = ['Main', 'Oak', 'Pine', 'Maple', 'Cedar', 'Elm', 'Washington', 'Park', 'Lake', 'Hill', 'River', 'Spring'];
       const streetTypes = ['Street', 'Avenue', 'Boulevard', 'Road', 'Drive', 'Lane', 'Way', 'Place', 'Court'];
-      
       const streetName = streetNames[Math.floor(Math.random() * streetNames.length)];
       const streetType = streetTypes[Math.floor(Math.random() * streetTypes.length)];
-      
       const aptTypes = ['Apt', 'Suite', 'Unit', 'Floor'];
       const aptType = aptTypes[Math.floor(Math.random() * aptTypes.length)];
       const aptNumber = Math.floor(1 + Math.random() * 999);
-      
       const city = CITIES[country][Math.floor(Math.random() * CITIES[country].length)];
       const state = STATES[country][Math.floor(Math.random() * STATES[country].length)];
       const zip = ZIP_FORMATS[country]();
-      
       return {
         line1: `${streetNumber} ${streetName} ${streetType}`,
         line2: `${aptType} ${aptNumber}`,
@@ -592,13 +484,11 @@
       };
     }
     
-    // Get a random letter
     function randomLetter() {
       const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
       return letters.charAt(Math.floor(Math.random() * letters.length));
     }
     
-    // Get multiple random letters
     function randomLetters(count) {
       let result = '';
       for (let i = 0; i < count; i++) {
@@ -607,35 +497,29 @@
       return result;
     }
     
-    // Generate a random word
     function getRandomWord(minLength, maxLength) {
       const length = Math.floor(minLength + Math.random() * (maxLength - minLength + 1));
       const vowels = 'aeiou';
       const consonants = 'bcdfghjklmnpqrstvwxyz';
       let word = '';
-      
       let useVowel = Math.random() > 0.5;
       for (let i = 0; i < length; i++) {
         const charset = useVowel ? vowels : consonants;
         word += charset.charAt(Math.floor(Math.random() * charset.length));
-        useVowel = !useVowel; // Alternate between vowels and consonants
+        useVowel = !useVowel;
       }
-      
-      // Capitalize first letter
       return word.charAt(0).toUpperCase() + word.slice(1);
     }
     
-    // Copy text to clipboard
     function copyToClipboard(text) {
       navigator.clipboard.writeText(text).then(() => {
         alert('Copied to clipboard!');
-      }, (err) => {
+      }).catch(err => {
         console.error('Could not copy text: ', err);
       });
     }
     
-    // UI Interaction
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const generateBtn = document.getElementById('generateBtn');
       const cardTypeSelect = document.getElementById('cardType');
       const cardCountInput = document.getElementById('cardCount');
@@ -649,32 +533,25 @@
       const cvvPreview = document.getElementById('cvvPreview');
       const addressSection = document.getElementById('addressSection');
       
-      // Update preview when card type changes
-      cardTypeSelect.addEventListener('change', function() {
+      cardTypeSelect.addEventListener('change', function () {
         const cardType = this.value;
         document.querySelector('.card-brand').textContent = cardType;
         previewCard.style.background = CARD_COLORS[cardType] || CARD_COLORS.VISA;
       });
       
-      // Show/hide address section based on selection
-      includeAddressSelect.addEventListener('change', function() {
+      includeAddressSelect.addEventListener('change', function () {
         addressSection.style.display = this.value === 'yes' ? 'block' : 'none';
       });
       
-      // Generate cards when button is clicked
-      generateBtn.addEventListener('click', function() {
+      generateBtn.addEventListener('click', function () {
         const cardType = cardTypeSelect.value;
-        const cardCount = parseInt(cardCountInput.value) || 1;
+        const cardCount = parseInt(cardCountInput.value, 10) || 1;
         const nameType = nameTypeSelect.value;
         const country = countrySelect.value;
         const includeAddress = includeAddressSelect.value === 'yes';
         
-        // Clear existing entries if generating more than one
-        if (cardCount > 1) {
-          historyTableBody.innerHTML = '';
-        }
+        if (cardCount > 1) historyTableBody.innerHTML = '';
         
-        // Generate the specified number of cards
         for (let i = 0; i < cardCount; i++) {
           const cardNumber = generateCreditCardNumber(cardType);
           const formattedNumber = formatCardNumber(cardNumber, cardType);
@@ -682,7 +559,6 @@
           const cvv = generateCVV(cardType);
           const name = generateName(country, nameType);
           
-          // Create a table row for the generated card
           const row = document.createElement('tr');
           row.innerHTML = `
             <td>${formattedNumber}</td>
@@ -690,10 +566,13 @@
             <td>${name}</td>
             <td>${expiry}</td>
             <td>${cvv}</td>
-            <td><button class="copy-btn" data-card="${cardNumber}" data-name="${name}" data-expiry="${expiry}" data-cvv="${cvv}">Copy</button></td>
+            <td>
+              <button class="copy-btn" data-card="${cardNumber}" data-name="${name}" data-expiry="${expiry}" data-cvv="${cvv}">
+                Copy
+              </button>
+            </td>
           `;
           
-          // Update preview card with the last generated card
           if (i === cardCount - 1) {
             document.querySelector('.card-brand').textContent = cardType;
             document.querySelector('.card-number').textContent = formattedNumber;
@@ -701,8 +580,6 @@
             expiryPreview.textContent = expiry;
             cvvPreview.textContent = cvv;
             previewCard.style.background = CARD_COLORS[cardType] || CARD_COLORS.VISA;
-            
-            // Update address if included
             if (includeAddress) {
               const address = generateAddress(country);
               document.getElementById('addressLine1').textContent = address.line1;
@@ -717,13 +594,11 @@
             }
           }
           
-          // Add to history table
           historyTableBody.appendChild(row);
         }
         
-        // Add event listeners to copy buttons
         document.querySelectorAll('.copy-btn').forEach(btn => {
-          btn.addEventListener('click', function() {
+          btn.addEventListener('click', function () {
             const cardInfo = `Card: ${this.dataset.card}\nName: ${this.dataset.name}\nExpiry: ${this.dataset.expiry}\nCVV: ${this.dataset.cvv}`;
             copyToClipboard(cardInfo);
           });
